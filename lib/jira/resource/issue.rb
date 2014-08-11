@@ -74,6 +74,21 @@ module JIRA
         end
       end
 
+      # Saves the specified issue attributes by sending a POST
+      # request to JIRA
+      #
+      # Accepts an attributes hash of the values to be saved.  Will throw a
+      # JIRA::HTTPError if the request fails (response is not HTTP 2xx).
+      def transition!(attrs)
+        http_method = :post
+        url_str = url + '/transitions'
+        response = client.send(http_method, url_str, attrs.to_json)
+        set_attrs(attrs, false)
+        set_attrs_from_response(response)
+        @expanded = false
+        true
+      end
+
     end
 
   end
