@@ -21,8 +21,8 @@ Gem::Specification.new do |s|
   s.add_development_dependency "railties"
   s.add_runtime_dependency "oauth", '~> 0.4.7'
   s.add_runtime_dependency "activesupport"
-  s.add_development_dependency "webmock", '~> 1.18.0'
-  s.add_development_dependency "rspec", '~> 3.0.0'
+  s.add_development_dependency "webmock"
+  s.add_development_dependency "rspec"
   s.add_development_dependency "rake"
 end
 
